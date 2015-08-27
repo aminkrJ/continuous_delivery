@@ -1,15 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "libraries/show" do
+RSpec.describe "libraries/show", type: :view do
   before(:each) do
-    @library = assign(:library, stub_model(Library,
-      :title => "Title"
-    ))
+    @library = assign(:library, Library.create!())
   end
 
   it "renders attributes in <p>" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Title/)
   end
 end
